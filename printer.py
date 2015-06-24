@@ -7,6 +7,7 @@ class Printer(object):
     Pretty printer for wire format.
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, width):
+        self.width = width
+
 
