@@ -9,6 +9,8 @@ class Printer(object):
 
     def __init__(self, width):
         self.width = width
+        self.field_str = '|'
+        self.length = 0
 
     def add_field(self, name, length):
         """
@@ -19,6 +21,7 @@ class Printer(object):
     def __repr__(self):
         return '\n'.join([self._bit_numbers(),
                           self._header_footer_line(),
+                          self.field_str,
                           self._header_footer_line()])
 
     def _bit_numbers(self):
