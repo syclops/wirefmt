@@ -10,4 +10,7 @@ class Printer(object):
     def __init__(self, width):
         self.width = width
 
+    def __repr__(self):
+        out_str = ''
+        return out_str
 
