@@ -4,9 +4,7 @@
 
 import argparse
 
-def printNums(width):
-    print ''.join([' ' + (' ' if i < 10 else str(i/10)) for i in range(width)])
-    print ''.join([' ' + str(i % 10) for i in range(width)])
+from printer import Printer
 
 def main():
     parser = argparse.ArgumentParser()
@@ -14,7 +12,7 @@ def main():
                         default=32,
                         help='width of the format in bits (default: 32)')
     args = parser.parse_args()
-    printNums(args.width)
+    p = Printer(args.width)
 
 if __name__ == '__main__':
     main()
