@@ -20,9 +20,9 @@ class Printer(object):
 
     def __repr__(self):
         return '\n'.join([self._bit_numbers(),
-                          self._header_footer_line(),
+                          self._header_line(),
                           self.field_str,
-                          self._header_footer_line()])
+                          self._footer_line()])
 
     def _bit_numbers(self):
         out_str = ' '
@@ -32,5 +32,11 @@ class Printer(object):
         out_str += ' '.join([str(i%10) for i in range(self.width)])
         return out_str
 
-    def _header_footer_line(self):
+    def _header_line(self):
         return '-'.join('+' * (self.width + 1))
+
+    def _footer_line(self):
+        if self.length % self.width == 0:
+            return self._header_line()
+        else:
+            return '-'.join('+' * (self.length % self.width + 1))
