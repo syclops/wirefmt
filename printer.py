@@ -10,6 +10,12 @@ class Printer(object):
     def __init__(self, width):
         self.width = width
 
+    def add_field(self, name, length):
+        """
+        Add a named field with a specified length to the record.
+        """
+        pass
+
     def __repr__(self):
         return '\n'.join([self._bit_numbers(),
                           self._header_footer_line(),
