@@ -1,0 +1,55 @@
+# LaTeX output #
+#########################
+*-eps-converted-to.pdf
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+*.ps
+*.synctex.gz
+*.toc
+*.idx
+*.out
+
+
+# OS generated files #
+#########################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+# Python generated files #
+#########################
+*.pyc
+
+
+# vim generated files #
+#########################
+*.swp
+
+
+# Crypto library generated files #
+#########################
+*.so
+*.o
+
+
+# Documentation and Environment files
+#########################
+doc/_build/
+venv/
+
+# Docker working directory
+##########################
+docker/_build/
+
+# Test coverage
+##########################
+.coverage
+htmlcov/
