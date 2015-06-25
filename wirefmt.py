@@ -17,7 +17,7 @@ def main():
     p = Printer(args.width)
     for line in fileinput.input(args.file):
         [name, length] = line.strip().split()
-        p.add_field(name, length)
+        p.add_field(name, int(length))
     print p
 
 if __name__ == '__main__':

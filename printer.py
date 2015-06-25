@@ -16,7 +16,11 @@ class Printer(object):
         """
         Add a named field with a specified length to the record.
         """
-        pass
+        if self.length != 0 and self.length % self.width == 0:
+            self.field_str += '\n' + self._header_line() + '\n|'
+        self.field_str += '{0:^{width}}'.format(name, width=(length * 2 - 1))
+        self.field_str += '|'
+        self.length += length
 
     def __repr__(self):
         return '\n'.join([self._bit_numbers(),
