@@ -17,14 +17,14 @@ class Printer(object):
         Add a named field with a specified length to the record.
         """
         if self.length != 0 and self.length % self.width == 0:
-            self.field_str += '\n' + self._header_line() + '\n|'
+            self.field_str += '\n' + self._full_line() + '\n|'
         self.field_str += '{0:^{width}}'.format(name, width=(length * 2 - 1))
         self.field_str += '|'
         self.length += length
 
     def __repr__(self):
         return '\n'.join([self._bit_numbers(),
-                          self._header_line(),
+                          self._full_line(),
                           self.field_str,
                           self._footer_line()])
 
@@ -36,11 +36,11 @@ class Printer(object):
         out_str += ' '.join([str(i%10) for i in range(self.width)])
         return out_str
 
-    def _header_line(self):
+    def _full_line(self):
         return '-'.join('+' * (self.width + 1))
 
     def _footer_line(self):
         if self.length % self.width == 0:
-            return self._header_line()
+            return self._full_line()
         else:
             return '-'.join('+' * (self.length % self.width + 1))
